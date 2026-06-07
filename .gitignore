@@ -1,36 +1,9 @@
-# Prerequisites
-*.d
-
-# Compiled Object files
-*.slo
-*.lo
+# Compiled object files
 *.o
 *.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Linker files
-*.ilk
-
-# Debugger Files
-*.pdb
-
-# Compiled Dynamic libraries
 *.so
-*.dylib
 *.dll
-*.so.*
-
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
+*.dylib
 *.a
 *.lib
 
@@ -39,31 +12,74 @@
 *.out
 *.app
 
-# Build directories
-build/
-Build/
-build-*/
+# Debug files
+*.pdb
+*.idb
 
-# CMake generated files
+# CMake
+build/
+cmake-build-*/
 CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
 Makefile
-install_manifest.txt
 compile_commands.json
+
+# Visual Studio
+.vs/
+*.vcxproj.user
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# VS Code
+.vscode/
+
+# Code::Blocks
+*.cbp
+*.layout
+*.depend
+
+# CLion
+.idea/
+
+# Qt Creator
+*.pro.user
+*.pro.user.*
+
+# Logs
+*.log
 
 # Temporary files
 *.tmp
-*.log
-*.bak
+*.temp
 *.swp
+*~
 
-# vcpkg
-vcpkg_installed/
+# macOS
+.DS_Store
 
-# debug information files
-*.dwo
+# Windows
+Thumbs.db
+Desktop.ini
 
-# test output & cache
-Testing/
-.cache/
+# Linux
+.directory
+
+# Coverage and profiling
+*.gcda
+*.gcno
+*.gcov
+*.prof
+*.profraw
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.rar
+
+# Generated binaries
+bin/
+dist/

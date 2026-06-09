@@ -1,31 +1,77 @@
-# Compiled object files
+# ==========================================
+# C++ General
+# ==========================================
+
+# Object files
 *.o
 *.obj
+*.lo
+*.slo
+
+# Libraries
+*.a
+*.la
+*.lib
 *.so
+*.so.*
 *.dll
 *.dylib
-*.a
-*.lib
 
 # Executables
 *.exe
 *.out
 *.app
+*.elf
 
-# Debug files
+# Debug symbols
 *.pdb
 *.idb
 
+# ==========================================
+# Code::Blocks
+# ==========================================
+
+# Project files (keep if collaborating)
+# *.cbp
+
+# User-specific files
+*.layout
+*.depend
+
+# Auto-save and backup files
+*.bak
+*.autosave
+
+# ==========================================
+# GCC / MinGW
+# ==========================================
+
+*.gch
+
+# Common output folders
+bin/
+obj/
+Debug/
+Release/
+
+# ==========================================
 # CMake
+# ==========================================
+
 build/
 cmake-build-*/
 CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
-Makefile
 compile_commands.json
+CTestTestfile.cmake
+Makefile
+install_manifest.txt
 
+# ==========================================
 # Visual Studio
+# ==========================================
+
 .vs/
 *.vcxproj.user
 *.suo
@@ -33,53 +79,87 @@ compile_commands.json
 *.userosscache
 *.sln.docstates
 
+# ==========================================
 # VS Code
+# ==========================================
+
 .vscode/
 
-# Code::Blocks
-*.cbp
-*.layout
-*.depend
+# ==========================================
+# CLion / JetBrains
+# ==========================================
 
-# CLion
 .idea/
 
+# ==========================================
 # Qt Creator
+# ==========================================
+
 *.pro.user
 *.pro.user.*
 
+# ==========================================
 # Logs
+# ==========================================
+
 *.log
 
-# Temporary files
+# ==========================================
+# Temporary Files
+# ==========================================
+
 *.tmp
 *.temp
 *.swp
+*.swo
 *~
 
-# macOS
-.DS_Store
+# ==========================================
+# Coverage & Profiling
+# ==========================================
 
-# Windows
-Thumbs.db
-Desktop.ini
-
-# Linux
-.directory
-
-# Coverage and profiling
 *.gcda
 *.gcno
 *.gcov
 *.prof
 *.profraw
+*.profdata
 
+# ==========================================
+# Testing
+# ==========================================
+
+Testing/
+coverage/
+
+# ==========================================
 # Archives
+# ==========================================
+
 *.zip
 *.tar
 *.tar.gz
+*.tgz
 *.rar
+*.7z
 
-# Generated binaries
-bin/
+# ==========================================
+# OS Files
+# ==========================================
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# Linux
+.directory
+
+# ==========================================
+# Distribution
+# ==========================================
+
 dist/
+release/

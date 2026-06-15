@@ -46,7 +46,7 @@ public:
         return Age;
     }
 
-        void IntroduceYourself()
+    void IntroduceYourself()
     {
         cout << " \n*** PATIENT INFO *** " << endl;
         cout << "Name - " << Name << endl;

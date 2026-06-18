@@ -82,7 +82,7 @@ public:
 
 };
 
-int main(){
+int main_3(){
     PressureCalc Pressure_1;
     Pressure_1.run();
 

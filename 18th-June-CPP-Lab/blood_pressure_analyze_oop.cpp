@@ -23,69 +23,70 @@ f. For a systolic of 180 and above or a diastolic of 120 and above, respond with
 immediately."
 */
 
-class PressureCalc{
+class PressureCalc
+{
 private:
     double systolic;
     double diastolic;
 
-    void getinput(){
-    cout << "Enter systolic pressures: ";
-    cin >> systolic;
+    void getinput()
+    {
+        cout << "Enter systolic pressures: ";
+        cin >> systolic;
 
-    cout << "Enter diastolic pressures: ";
-    cin >> systolic;
-
-
-
+        cout << "Enter diastolic pressures: ";
+        cin >> systolic;
     }
 
-    void DisplayResults(){
-        if (systolic < 90 || diastolic < 60){
-            cout << "You have low blood pressure (Hypotension)." << endl;}
-
-
-
-        else if ((systolic >= 90 && systolic <= 120) &&
-         (diastolic >= 60 && diastolic <= 80)){
-            cout << "Your blood pressure is normal." << endl;
-         }
-
-
-        else if ((systolic >= 121 && systolic <= 139) || (diastolic >= 81 && diastolic <= 89)){
-
-            cout << "You have prehypertension." << endl;
-         }
-
-
-        else if ((systolic >= 140 && systolic <= 179) || (diastolic >= 90 && diastolic <= 119)){
-
-            cout << "You have high blood pressure (Hypertension)." << endl;
-         }
-
-
-        else if (systolic >= 180 || diastolic >= 120){
-            cout << "You are in a hypertensive crisis. " << "Seek emergency medical care immediately."  << endl;
+    void DisplayResults()
+    {
+        if (systolic < 90 || diastolic < 60)
+        {
+            cout << "You have low blood pressure (Hypotension)." << endl;
         }
 
+        else if ((systolic >= 90 && systolic <= 120) &&
+                 (diastolic >= 60 && diastolic <= 80))
+        {
+            cout << "Your blood pressure is normal." << endl;
+        }
+
+        else if ((systolic >= 121 && systolic <= 139) || (diastolic >= 81 && diastolic <= 89))
+        {
+
+            cout << "You have prehypertension." << endl;
+        }
+
+        else if ((systolic >= 140 && systolic <= 179) || (diastolic >= 90 && diastolic <= 119))
+        {
+
+            cout << "You have high blood pressure (Hypertension)." << endl;
+        }
+
+        else if (systolic >= 180 || diastolic >= 120)
+        {
+            cout << "You are in a hypertensive crisis. " << "Seek emergency medical care immediately." << endl;
+        }
     }
+
 public:
-    PressureCalc(){
+    PressureCalc()
+    {
         systolic = 0;
         diastolic = 0;
     }
 
-    void run(){
+    void run()
+    {
         getinput();
         DisplayResults();
-
     }
-
 };
 
-int main_3(){
+int main_3()
+{
     PressureCalc Pressure_1;
     Pressure_1.run();
 
     return 0;
-
 }

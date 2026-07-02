@@ -9,7 +9,7 @@ private:
 
 public:
     void getdata(){
-        cout << "Enter the tittle of the book:";  cin >> Title;
+        cout << "Enter the tittle of the book:";  getline(cin, Title);
         cout << "Enter the Price of the book:"; cin >> price;
 
 
@@ -67,11 +67,11 @@ public:
 
 };
 
-int main()
+int main_1()
 {
-    publication book_1;
-    book_1.getdata();
-    book_1.putdata();
+    //publication book_1;
+    //book_1.getdata();
+    //book_1.putdata();
 
 
     tape tape_1;

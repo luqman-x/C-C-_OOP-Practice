@@ -2,112 +2,124 @@
 #include <string>
 using namespace std;
 
-class PatientMonitor {
+class PatientMonitor
+{
 private:
-    string PatientID;
+    string patientName;
     float batteryLife;
 
 public:
-    void getdata(){
-    cout << "Enter Patient ID: "; cin >> PatientID;
-    cout << "Battery Percentage: "; cin >> batteryLife;
-}
+    void getdata()
+    {
+        cout << "Enter Name: ";
+        cin >> patientName;
+        cout << "Battery Percentage: ";
+        cin >> batteryLife;
+    }
 
-void putdata(){
-    cout << "=== PATIENT INFO ===" << endl;
-    cout << "Battery: " << batteryLife << "%" << endl;
-    cout << "Patient ID:" << PatientID <<endl;
-}
+    void putdata()
+    {
+        cout << "=== PATIENT INFO ===" << endl;
+        cout << "Battery: " << batteryLife << "%" << endl;
+        cout << "Name: " << patientName << endl;
+    }
 
-string getPatientID(){
-    return PatientID;
-
-}
-
+    string getPatientName()
+    {
+        return patientName;
+    }
 };
 
-class ECGMonitor: public PatientMonitor{
+class ECGMonitor : public PatientMonitor
+{
 private:
     int leadCount;
 
 public:
-    bool isFullDiagnostic(){
-    if(leadCount == 12){
-        return true;
+    bool isFullDiagnostic()
+    {
+        if (leadCount == 12)
+        {
+            return true;
+        }
+        else
+            return false;
     }
-    else
-        return false;
-
+    void getdata()
+    {
+        PatientMonitor::getdata();
+        cout << "Enter Lead Count value: ";
+        cin >> leadCount;
     }
-void getdata(){
-    PatientMonitor::getdata();
-    cout << "Enter Lead Count value: "; cin >> leadCount;
-}
 
-void putdata(){
-    PatientMonitor::putdata();
-    cout << "Lead Count:" << leadCount <<endl;
-
-}
-
+    void putdata()
+    {
+        PatientMonitor::putdata();
+        cout << "Lead Count:" << leadCount << endl;
+    }
 };
 
-class Spirometer: public PatientMonitor{
+class Spirometer : public PatientMonitor
+{
 private:
     float peakFlowRate;
 
 public:
-    bool hashObstraction(){
-        if(peakFlowRate < 300){
+    bool hashObstraction()
+    {
+        if (peakFlowRate < 300)
+        {
             return true;
         }
         else
             return false;
     }
 
-    void getdata(){
-    PatientMonitor::getdata();
-    cout << "Enter Peak FLow Rate value: "; cin >> peakFlowRate;
-}
+    void getdata()
+    {
+        PatientMonitor::getdata();
+        cout << "Enter Peak FLow Rate value: ";
+        cin >> peakFlowRate;
+    }
 
-void putdata(){
-    PatientMonitor::putdata();
-    cout << "Peak Flow Rate:" << peakFlowRate <<endl;
-}
+    void putdata()
+    {
+        PatientMonitor::putdata();
+        cout << "Peak Flow Rate:" << peakFlowRate << endl;
+    }
 };
 
-int main(){
-   bool val;
-   ECGMonitor monitor_1;
-   monitor_1.getdata();
-   monitor_1.putdata();
+int main()
+{
+    bool val;
+    ECGMonitor monitor_1;
+    monitor_1.getdata();
+    monitor_1.putdata();
 
-   val = monitor_1.isFullDiagnostic();
-   if (val == true){
-    cout << "INFO" << endl;
-    cout << "Full 12-lead diagnostic available for patient: " << monitor_1.getPatientID() << endl;
-
-   }else
-       {
-        cout << "NOTE:Patient: " << monitor_1.getPatientID() <<  " is on a limited lead configuration. Consider Upgrading to 12-lead"<< endl;
-       }
-
+    val = monitor_1.isFullDiagnostic();
+    if (val == true)
+    {
+        cout << "INFO" << endl;
+        cout << "Full 12-lead diagnostic available for patient: " << monitor_1.getPatientName() << endl;
+    }
+    else
+    {
+        cout << "NOTE: Patient: " << monitor_1.getPatientName() << " is on a limited lead configuration. Consider upgrading to 12-lead" << endl;
+    }
 
     Spirometer Spiro_1;
     Spiro_1.getdata();
     Spiro_1.putdata();
 
     val = Spiro_1.hashObstraction();
-    if(val == true){
-        cout << "ALERT: Possible airway obstraction detected  for patient: " << Spiro_1.getPatientID() << " Refer to pulmonologist"<< endl;
+    if (val == true)
+    {
+        cout << "ALERT: Possible airway obstruction detected for patient: " << Spiro_1.getPatientName() << " Refer to pulmonologist" << endl;
     }
     else
     {
-        cout << "INFO: Patient: " << Spiro_1.getPatientID() << "peak flow within acceptable rage" <<endl;
+        cout << "INFO: Patient: " << Spiro_1.getPatientName() << " peak flow within acceptable range" << endl;
     }
 
-
-
-return 0;
-
+    return 0;
 }

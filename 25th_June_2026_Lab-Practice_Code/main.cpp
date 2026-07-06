@@ -23,6 +23,12 @@ public:
         IsRunning = false;
     }
 
+    // Destructor
+    ~SmartInfusionPump()
+    {
+        cout << "SmartInfusionPump object destroyed.\n";
+    }
+
     void TakeInputs()
     {
         cout << "Enter Drug Name: ";

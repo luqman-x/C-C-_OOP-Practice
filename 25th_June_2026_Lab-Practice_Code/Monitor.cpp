@@ -1,72 +1,85 @@
 #include <iostream>
 using namespace std;
 
-class CardiacMonitor{
+class CardiacMonitor
+{
 private:
     unsigned int normalBeat;
     unsigned int totalBeat;
+
 public:
-     CardiacMonitor(){
+    CardiacMonitor()
+    {
         normalBeat = 0;
         totalBeat = 0;
-     }
-    void NormalBeatBeatCount(){
+    }
+    void NormalBeatBeatCount()
+    {
         normalBeat++;
         totalBeat++;
     }
 
-    void AbnormalBeatCount(){
+    void AbnormalBeatCount()
+    {
         totalBeat++;
     }
 
-    void display(){
+    void display()
+    {
         cout << "Total Number of beats : " << totalBeat << endl;
         cout << "Total Number of Normal beat" << normalBeat << endl;
 
         unsigned int AbnormalBeat = totalBeat - normalBeat;
         cout << "Total Number of Abnormal beats: " << AbnormalBeat << endl;
 
-
         float AbnormalPercentage;
-        if (totalBeat == 0){
+        if (totalBeat == 0)
+        {
             AbnormalPercentage = 0.0;
-            //return AbnormalPercentage;
+            // return AbnormalPercentage;
         }
-        else{
-            AbnormalPercentage = (AbnormalBeat * 100)/totalBeat ;
+        else
+        {
+            AbnormalPercentage = (AbnormalBeat * 100) / totalBeat;
         }
-        cout << "Total Number of Abnormal Percentages: " << AbnormalPercentage <<"%"<< endl;
+        cout << "Total Number of Abnormal Percentages: " << AbnormalPercentage << "%" << endl;
 
-        if(AbnormalPercentage >= 20){
+        if (AbnormalPercentage >= 20)
+        {
             cout << "Clinical Warning. Readings must be reviewed" << endl;
         }
     }
-
-    };
-int main(){
+};
+int main()
+{
     CardiacMonitor CM;
     char input;
     cout << "Enter N for Normal Count" << endl;
     cout << "Enter A for Abnormal Count" << endl;
     cout << "Enter E to end and Display" << endl;
 
-    do{
+    do
+    {
         cin >> input;
-        if(input == 'N' || input == 'n'){
+        if (input == 'N' || input == 'n')
+        {
             CM.NormalBeatBeatCount();
         }
-        else if(input == 'A' || input == 'a'){
+        else if (input == 'A' || input == 'a')
+        {
             CM.AbnormalBeatCount();
         }
-        else if( input == 'E' || input == 'e'){
+        else if (input == 'E' || input == 'e')
+        {
             CM.display();
             break;
         }
-        else{
-            cout << "You have entered the wrong input. Enter only N,A or E"<< endl;
+        else
+        {
+            cout << "You have entered the wrong input. Enter only N,A or E" << endl;
         }
 
-    }while(true);
+    } while (true);
 
     return 0;
 }

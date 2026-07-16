@@ -69,6 +69,12 @@ int main()
      */
 
     operation = add;
+    /*
+    Now operation points to add() function.
+    when calculate(x, y, operation); is called,
+    the calculate() function receives that pointer and executes it:
+    return operation(a, b); which is equivalent to: return add(a, b);
+    */
     cout << "Addition: " << calculate(x, y, operation) << endl;
 
     operation = subtract;

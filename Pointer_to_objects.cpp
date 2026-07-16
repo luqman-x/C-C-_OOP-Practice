@@ -11,11 +11,67 @@ In main():
 
 #include <iostream>
 #include <string>
+#include <limits>
 
 using namespace std;
 
+class Patient
+{
+private:
+    string name;
+    int ID;
+
+public:
+    void take_inputs()
+    {
+        cout << "Enter Patient Name: ";
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        getline(cin, name);
+
+        cout << "Enter Patient ID Number:";
+        cin >> ID;
+    }
+
+    void display_info()
+    {
+        cout << "Patien Name: " << name << endl;
+        cout << "Patient ID: " << ID << endl;
+    }
+};
 int main()
 {
+    int n;
+
+    cout << "How many patients do you want to enter? ";
+    cin >> n;
+
+    // Array of pointers to Patient objects
+    Patient **patients = new Patient *[n];
+
+    // Creating objects dynamically
+    for (int i = 0; i < n; i++)
+    {
+        patients[i] = new Patient;
+        cout << "\nPatient " << i + 1 << endl;
+        patients[i]->take_inputs();
+    }
+
+    // Display all patients
+    cout << "\nPatient Details\n";
+
+    for (int i = 0; i < n; i++)
+    {
+        patients[i]->display_info();
+        cout << endl;
+    }
+
+    // Free memory
+    for (int i = 0; i < n; i++)
+    {
+        delete patients[i];
+    }
+
+    delete[] patients;
 
     return 0;
 }

@@ -104,7 +104,7 @@ public:
 
     int main()
     {
-        Complex c1(2, 3);
+        Cmplex c1(2, 3);
         Complex c2(4, 5);
 
         Complex c3 = c1 + c2;

@@ -69,8 +69,46 @@ private:
 };
 
 // Operator Overloading
-
 /*
-This feature allows you to redefine how standard operators (like +, -, ==, or <<)
+ This feature allows you to redefine how standard operators (like +, -, ==, or <<)
  interact with your custom class objects.
 */
+
+class complex
+{
+private:
+    int real;
+    int img;
+
+public:
+    complex(int r = 0, int i = 0)
+    {
+        real = r;
+        img = g;
+    }
+
+    complex operator+(complex obj)
+    {
+        complex temp;
+
+        temp.real = real + obj.real;
+        temp.img = real + obj.img;
+
+        return temp;
+    }
+
+    void display()
+    {
+        cout << real << " + " << img << "i" << endl;
+    }
+
+    int main()
+    {
+        Complex c1(2, 3);
+        Complex c2(4, 5);
+
+        Complex c3 = c1 + c2;
+
+        c3.display();
+    }
+};

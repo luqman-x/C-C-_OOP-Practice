@@ -50,3 +50,27 @@ int main()
     print(2, 4); // Calls print(int, int)
     return 0;
 }
+
+// Another OOP implementation:
+
+class Box
+{
+public:
+    // Constructor Overloading
+    Box() { width = 0; }      // Default constructor
+    Box(int w) { width = w; } // Parameterized constructor
+
+    // Member Function Overloading
+    void setWidth(int w) { width = w; }
+    void setWidth(double w) { width = static_cast<int>(w); }
+
+private:
+    int width;
+};
+
+// Operator Overloading
+
+/*
+This feature allows you to redefine how standard operators (like +, -, ==, or <<)
+ interact with your custom class objects.
+*/

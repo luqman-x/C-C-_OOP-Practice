@@ -81,7 +81,7 @@ private:
     int img;
 
 public:
-    complex(int r = 0, int i = 0)
+    complex(int r = 0, int g = 0)
     {
         real = r;
         img = g;
@@ -104,10 +104,10 @@ public:
 
     int main()
     {
-        Cmplex c1(2, 3);
-        Complex c2(4, 5);
+        complex c1(3, 5);
+        complex c2(5, 7);
 
-        Complex c3 = c1 + c2;
+        complex c3 = c1 + c2;
 
         c3.display();
     }

@@ -10,11 +10,17 @@ public:
 
     int get_n()
     {
-        return
+        return n;
     }
 };
-int main()
+int main_1()
 {
-    cout << "Hello world!" << endl;
+
+    Number a = 223;
+    cout << a.get_n() << endl;
+
+    int x = a.get_n();
+    cout <<"x:" << x << endl;
+
     return 0;
 }

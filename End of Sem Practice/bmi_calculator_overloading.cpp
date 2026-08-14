@@ -79,7 +79,7 @@ public:
     }
 };
 
-int main()
+int main_1()
 {
 
     bmi_calculator patient;

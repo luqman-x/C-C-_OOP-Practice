@@ -50,6 +50,26 @@ int main()
          patientID = id;
          score = s;
       }
+
+      /*
+      return_type operator symbol(parameter_list){
+                  custom implementation logic
+      }
+      */
+      RecoveryScore operator+(const RecoveryScore &other)
+      {
+         float combinedScore = score + other.score;
+
+         if (combinedScore > 100)
+         {
+            combinedScore = 100;
+         }
+      }
+
+      bool operator>(const RecoveryScore &other)
+      {
+         return score > other.score;
+      }
    };
 
    return 0;

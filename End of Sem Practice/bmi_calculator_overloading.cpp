@@ -32,54 +32,55 @@ patient data.
 
 using namespace std;
 
-
-
-class bmi_calculator{
-   private:
-   // Classify BMI:
-   void printClassification(float bmi)
-   {
-       if (bmi < 18.5)
-       {
-           cout << "Classification: Underweight" << endl;
-       }
-       if (bmi <= 29.9)
-       {
-           cout << "Classification: Overweight" <<endl;
-       }
-       else {
+class bmi_calculator
+{
+private:
+    // Classify BMI:
+    void printClassification(float bmi)
+    {
+        if (bmi < 18.5)
+        {
+            cout << "Classification: Underweight" << endl;
+        }
+        if (bmi <= 29.9)
+        {
+            cout << "Classification: Overweight" << endl;
+        }
+        else
+        {
             cout << "Classification: Obese" << endl;
         }
-   }
+    }
 
-
-   public:
+public:
     void calculate(float weightKg, float heightM)
     {
         float bmi = weightKg / (heightM * heightM);
 
-        cout << "BMI(Metric): " << bmi<<endl;
+        cout << "BMI(Metric): " << bmi << endl;
 
         printClassification(bmi);
     }
 
     // Imperial Version:
     void calculate(float weightLbs, float heightInches, string unit)
-                   {
-                       if (unit == "imperial"){
-                        float bmi = (weightLbs / (heightInches * heightInches)) * 703;
+    {
+        if (unit == "imperial")
+        {
+            float bmi = (weightLbs / (heightInches * heightInches)) * 703;
 
-                        cout << "BMI (Imperial): " << bmi << endl;
-                        printClassification(bmi);
-                   }else{
-                    cout << "Invalid unit!" << endl;
-                   }
-
-                   }
-
+            cout << "BMI (Imperial): " << bmi << endl;
+            printClassification(bmi);
+        }
+        else
+        {
+            cout << "Invalid unit!" << endl;
+        }
+    }
 };
 
-int main(){
+int main()
+{
 
     bmi_calculator patient;
 
@@ -87,7 +88,7 @@ int main(){
     cout << "Patient 1" << endl;
     patient.calculate(50.0f, 1.70f);
 
-    //Patient 2: Metric
+    // Patient 2: Metric
     cout << "Patient 2" << endl;
     patient.calculate(50.0f, 1.70f);
 

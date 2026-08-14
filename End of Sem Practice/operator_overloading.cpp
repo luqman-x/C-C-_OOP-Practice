@@ -37,5 +37,20 @@ using namespace std;
 
 int main()
 {
+   class RecoveryScore
+   {
+   private:
+      string patientID;
+      float score;
+
+   public:
+      // Constructor
+      RecoveryScore(string id, float s)
+      {
+         patientID = id;
+         score = s;
+      }
+   };
+
    return 0;
 }

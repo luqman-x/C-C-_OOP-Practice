@@ -32,7 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="main.cpp" />
+		<Unit filename="bmi_calculator_overloading.cpp" />
+		<Unit filename="operator_overloading.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

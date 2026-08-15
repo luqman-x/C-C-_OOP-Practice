@@ -86,7 +86,7 @@ public:
    }
 };
 
-int main()
+int main_2()
 {
 
    RecoveryScore patient1("PT001", 75.5);

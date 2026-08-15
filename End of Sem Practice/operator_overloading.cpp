@@ -32,45 +32,91 @@ Write a main() function that:
 
 #include <iostream>
 #include <string>
-
+#include <math.h>
+#include <algorithm>
 using namespace std;
+
+class RecoveryScore
+{
+private:
+   string patientID;
+   float score;
+
+public:
+   // Constructor
+   RecoveryScore(string id, float s)
+   {
+      patientID = id;
+      score = s;
+   }
+
+   /*
+   return_type operator symbol(parameter_list){
+               custom implementation logic
+   }
+   */
+   RecoveryScore operator+(const RecoveryScore &other)
+   {
+      return RecoveryScore("Combined", std::min(score + other.score, 100.0f));
+   }
+
+   bool operator>(const RecoveryScore &other)
+   {
+      return score > other.score;
+   }
+
+   /*
+   ****Friend function decleration:
+   friedn return_type functionname(ClassName &object)
+
+   ****FRIEND FUNCTION DEFINITION (Outside the class scope)
+   return_type functionName(ClassName &object)
+   {
+         // Can directly access private data using the object reference
+   }
+   */
+
+   // Overload << operator
+   friend ostream &operator<<(ostream &out, const RecoveryScore &patient)
+   {
+      out << "Patient: " << patient.patientID
+          << " | Score: " << patient.score << "/100";
+
+      return out;
+   }
+};
 
 int main()
 {
-   class RecoveryScore
+
+   RecoveryScore patient1("PT001", 75.5);
+   RecoveryScore patient2("PT002", 82.0);
+
+   // print both patients using <<
+   cout << patient1 << endl;
+   cout << patient2 << endl;
+
+   cout << endl;
+
+   // Compare the two patients using >
+   if (patient1 > patient2)
    {
-   private:
-      string patientID;
-      float score;
+      cout << "Patient PT002 has the higher recovery score." << endl;
+   }
 
-   public:
-      // Constructor
-      RecoveryScore(string id, float s)
-      {
-         patientID = id;
-         score = s;
-      }
+   else if (patient2 > patient1)
+   {
+      cout << "Both patients have the higher recovery score" << endl;
+   }
+   else
+   {
+      cout << "Both patients have the same recovery score." << endl;
+   }
+   cout << endl;
 
-      /*
-      return_type operator symbol(parameter_list){
-                  custom implementation logic
-      }
-      */
-      RecoveryScore operator+(const RecoveryScore &other)
-      {
-         float combinedScore = score + other.score;
+   RecoveryScore combined = patient1 + patient2;
 
-         if (combinedScore > 100)
-         {
-            combinedScore = 100;
-         }
-      }
-
-      bool operator>(const RecoveryScore &other)
-      {
-         return score > other.score;
-      }
-   };
+   cout << combined << endl;
 
    return 0;
 }

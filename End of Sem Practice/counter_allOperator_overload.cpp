@@ -55,7 +55,7 @@ public:
         return in;
     }
 };
-int main()
+int main_3()
 {
 
     Counter c1(10);

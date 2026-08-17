@@ -58,7 +58,7 @@ int calculate(int a, int b, int (*operation)(int, int))
     return operation(a, b);
 }
 
-int main()
+int main_5()
 {
     int a = 20;
     int b = 5;

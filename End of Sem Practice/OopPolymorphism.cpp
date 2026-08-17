@@ -56,7 +56,7 @@ public:
         return 3.141592 * radius * radius;
     }
 };
-int main()
+int main_6()
 {
     Rectangle rectangle(10, 5);
     Circle circle(5);

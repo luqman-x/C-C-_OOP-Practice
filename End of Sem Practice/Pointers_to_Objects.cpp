@@ -15,6 +15,7 @@ In main():
 
 #include <iostream>
 #include <string>
+#include <limits>`
 
 using namespace std;
 
@@ -28,7 +29,9 @@ public:
     void storeData()
     {
         cout << "Enter patient name: ";
-        cin >> name;
+        // Clear the leftover newline character out of the stream buffer
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        getline(cin, name);
 
         cout << "Enter patient ID: ";
         cin >> id;
@@ -41,7 +44,7 @@ public:
     }
 };
 
-int main()
+int main_4()
 {
     int n;
     cout << "Enter Number of Patients: ";

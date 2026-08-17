@@ -32,6 +32,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="PointerFunctions.cpp" />
 		<Unit filename="Pointers_to_Objects.cpp" />
 		<Unit filename="bmi_calculator_overloading.cpp" />
 		<Unit filename="counter_allOperator_overload.cpp" />

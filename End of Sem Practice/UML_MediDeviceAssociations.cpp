@@ -211,7 +211,7 @@ public:
     }
 };
 
-int main()
+int main_7()
 {
     Drug insulin("Insulin", 0.75);
     PatientProfile patient1("PAT1001", 12);

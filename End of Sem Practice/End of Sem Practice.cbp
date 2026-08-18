@@ -35,6 +35,7 @@
 		<Unit filename="OopPolymorphism.cpp" />
 		<Unit filename="PointerFunctions.cpp" />
 		<Unit filename="Pointers_to_Objects.cpp" />
+		<Unit filename="Polymorphism_PointersArrays&amp;FriendFunction.cpp" />
 		<Unit filename="UML_MediDeviceAssociations.cpp" />
 		<Unit filename="bmi_calculator_overloading.cpp" />
 		<Unit filename="counter_allOperator_overload.cpp" />

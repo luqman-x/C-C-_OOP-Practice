@@ -19,7 +19,7 @@ public:
         float fltfeet = MTF * meters; // convert to float feet
         feet = int(fltfeet);          // feet is integer part
 
-        inches = 12 * (fltfeet - feet); // inches is whatâ€™s left
+        inches = 12 * (fltfeet - feet); // inches is what’s left
     }
 
     Distance(int ft, float in) : feet(ft), inches(in), MTF(3.280833) {}
@@ -35,7 +35,7 @@ public:
         return fracfeet / MTF;
     }
 };
-int main()
+int main_9()
 {
     Distance dist1 = 2.35;
     cout << "\ndist1 = ";

@@ -149,11 +149,8 @@ public:
         return (rawVoltage * 12.0) + 0.5;
     }
 };
-int main()
+int main_8()
 {
-    int n;
-    cout << "Enter number of units: ";
-    cin >> n;
     Biosensor *telemetryUnit[3];
 
     // Dynamically create different sensor objects
